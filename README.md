@@ -1,7 +1,12 @@
-# Green Business .Net Core web app for business
+
+<p align="center">
+  <img src="BlueBusiness/BlueBusiness/wwwroot/images/BlogImage/GreenBusinessPPT.jpg" width="850" alt="accessibility text">
+</p>
 
 
-1.  GreenBusiness Web Application for Business. You can Manage from your Admin dashboard your Blog posts, Careers positions, job applications, admin users, customer messages.\
+
+
+1.  GreenBusiness Web Application for Business. You can Manage from your Admin dashboard your Blog posts, Careers positions, job applications, admin users, customer messages.
 
 2.  This is not CMS but a powerful template in .Net Core 3, Bootstrap 4, CSS3, jQuery Validation, Azure Web Apps, Azure SQL Database, Azure Applications Insight. Developed and tested with visual studio 2019, tools and framework such as Chrome, Postman and Swagger.
 
