@@ -1,0 +1,202 @@
+﻿@model BlueBusiness.Models.Applications
+@{
+    ViewData["Title"] = "JobApplication";
+}
+
+<h1 class="font-weight-normal mt-3">Job Application</h1>
+
+<form method="post" asp-controller="Careers" asp-action="JobApplication">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Job Title</label>
+            <input type="text" class="form-control" value="@ViewBag.JobTitle" disabled>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Location</label>
+            <input type="text" class="form-control" value="@ViewBag.JobLocation" disabled>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Your Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Lastname</label>
+            <input type="text" class="form-control" placeholder="Lastname">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Phone</label>
+            <input type="tel" class="form-control" placeholder="Phone Number">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Country" class="control-label"></label>
+            <select asp-for="Country" class="form-control">
+                <option selected>Choose...</option>
+                <option>USA</option>
+                <option>Europe</option>
+                <option>Asia</option>
+            </select>
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Post Code</label>
+            <input type="text" class="form-control" placeholder="Post Code">
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label asp-for="Resume" class="control-label"></label>
+            <div class="custom-file">
+                <input asp-for="Resume" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                <label asp-for="Resume" class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
+            </div>
+        </div>
+
+    </div>
+
+    <h4 class="font-weight-normal mt-4">Employment Eligibility</h4>
+    <p>Are you legally authorized to work in the United States? *</p>
+    <div class="form-row">
+        <!-- Define Eligibility -->
+        <div class="form-group col-md-6">
+            <label asp-for="EmploymentEligibility" class="control-label"></label>
+            <div class="custom-control custom-radio">
+                <input asp-for="EmploymentEligibility" type="radio" id="customRadioEligibility1" name="customRadioEligibility" class="custom-control-input" value="No">
+                <label class="custom-control-label" for="customRadioEligibility1">Yes</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="EmploymentEligibility" type="radio" id="customRadioEligibility2" name="customRadioEligibility" class="custom-control-input" value="Yes">
+                <label class="custom-control-label" for="customRadioEligibility2">No</label>
+            </div>
+            <span asp-validation-for="EmploymentEligibility" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <h3 class="font-weight-normal mt-4">Diversity</h3>
+    <p>
+        Subject to certain governmental recordkeeping and reporting requirements, including for the administration of civil rights laws and regulations. In order to comply with these laws, we invite you to voluntarily self-identify your race, ethnicity, and gender. Submission of this information is voluntary and will not influence our screening or hiring decisions. The information obtained will be kept confidential and separate from your application and/or personnel records and will only be used in accordance with the provisions of applicable laws,
+        executive orders, and regulations.
+    </p>
+    <div class="form-row">
+
+        <!-- Define Sex -->
+        <div class="form-group col-md-6">
+            <label asp-for="Gender" class="control-label"></label>
+            <div class="custom-control custom-radio">
+                <input asp-for="Gender" type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Male">
+                <label class="custom-control-label" for="customRadio1">Male</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Gender" type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Female">
+                <label class="custom-control-label" for="customRadio2">Female</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Gender" type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="No-Gender">
+                <label class="custom-control-label" for="customRadio3">No Answer</label>
+            </div>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <!-- Define Ethniticy -->
+        <div class="form-group col-md-6">
+            <label asp-for="Ethnicity" class="control-label"></label>
+            <div class="custom-control custom-radio">
+                <input asp-for="Ethnicity" type="radio" id="customRadioEthnicity1" name="customRadioEthnicity" class="custom-control-input" value="Hispanic-Latino">
+                <label asp-for="Ethnicity" class="custom-control-label" for="customRadioEthnicity1">Hispanic or Latino</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Ethnicity" type="radio" id="customRadioEthnicity2" name="customRadioEthnicity" class="custom-control-input" value="Not Hispanic-Latino">
+                <label asp-for="Ethnicity" class="custom-control-label" for="customRadioEthnicity2">Not Hispanic or Latino</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Ethnicity" type="radio" id="customRadioEthnicity3" name="customRadioEthnicity" class="custom-control-input" value="No-Ethnicity">
+                <label asp-for="Ethnicity" class="custom-control-label" for="customRadioEthnicity3">I do not wish to provide this information</label>
+            </div>
+            <span asp-validation-for="Ethnicity" class="text-danger"></span>
+        </div>
+
+        <!-- Define Race -->
+        <div class="form-group col-md-6">
+            <label asp-for="Race" class="control-label"></label>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace1" name="customRadioRace" class="custom-control-input" value="American Indian or Alaska Native">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace1">American Indian or Alaska Native</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace2" name="customRadioRace" class="custom-control-input" value="Asian">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace2">Asian</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace3" name="customRadioRace" class="custom-control-input" value="Black or African American">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace3">Black or African American</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace4" name="customRadioRace" class="custom-control-input" value="Hispanic or Latino">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace4">Hispanic or Latino</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace5" name="customRadioRace" class="custom-control-input" value="Native Hawaiian or Other Pacific Islander">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace5">Native Hawaiian or Other Pacific Islander</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace6" name="customRadioRace" class="custom-control-input" value="Two or more races (not Hispanic or Latino)">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace6">Two or more races (not Hispanic or Latino)</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace7" name="customRadioRace" class="custom-control-input" value="White">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace7">White</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Race" type="radio" id="customRadioRace8" name="customRadioRace" class="custom-control-input" value="I do not wish to provide this information">
+                <label asp-for="Race" class="custom-control-label" for="customRadioRace8">I do not wish to provide this information</label>
+            </div>
+            <span asp-validation-for="Race" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <h3 class="font-weight-normal mt-4">Voluntary Self-Identification of Disability</h3>
+    <p>
+        Completing this form is voluntary, but we hope that you will choose to fill it out. If you are applying for a job,
+        any answer you give will be kept private and will not be used against you in any way.
+    </p>
+    <p>
+        You may voluntarily self-identify as having a disability on this form without fear
+        of any punishment because you did not identify as having a disability earlier.
+    </p>
+    <div class="form-row">
+        <!-- Define Disability -->
+        <div class="form-group col-md-6">
+            <label asp-for="Disability" class="control-label"></label>
+            <div class="custom-control custom-radio">
+                <input asp-for="Disability" type="radio" id="customRadioDisability1" name="customRadioDisability" class="custom-control-input" value="I don't wish to answer">
+                <label asp-for="Disability" class="custom-control-label" for="customRadioDisability1">I don't wish to answer</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Disability" type="radio" id="customRadioDisability2" name="customRadioDisability" class="custom-control-input" value="No, I don't have a disability">
+                <label asp-for="Disability" class="custom-control-label" for="customRadioDisability2">No, I don't have a disability</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input asp-for="Disability" type="radio" id="customRadioDisability3" name="customRadioDisability" class="custom-control-input" value="Yes, I have a disability (or previously had a disability)">
+                <label asp-for="Disability" class="custom-control-label" for="customRadioDisability3">Yes, I have a disability (or previously had a disability)</label>
+            </div>
+            <span asp-validation-for="Disability" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg mt-4 mb-4">Submit Application</button>
+</form>

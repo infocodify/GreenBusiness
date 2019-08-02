@@ -1,0 +1,34 @@
+﻿@model BlueBusiness.Models.ViewModel.BlogListViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn border" page-class-normal="btn btn-default active"
+     page-class-selected="btn btn-primary active" class="btn-group m-1"></div>
+
+<table class="table table-striped border">
+    <tr class="table-info">
+        <th>
+            @Html.DisplayNameFor(m => m.Posts.FirstOrDefault().Title)
+        </th>
+    </tr>
+    @foreach (var item in Model.Posts)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Title)
+            </td>
+
+
+        </tr>
+
+    }
+</table>
+
+
+<div style="color:darkred;" page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn border" page-class-normal="btn btn-default active"
+     page-class-selected="btn btn-primary active" class="btn-group m-1"></div>

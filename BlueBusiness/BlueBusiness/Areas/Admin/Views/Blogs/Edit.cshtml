@@ -1,0 +1,57 @@
+﻿@model BlueBusiness.Models.ViewModel.BlogsViewModel
+@using BlueBusiness.Extensions
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Blogs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Blogs.Id" />
+            <div class="form-group">
+                <label asp-for="Blogs.Title" class="control-label"></label>
+                <input asp-for="Blogs.Title" class="form-control" />
+                <span asp-validation-for="Blogs.Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Blogs.Image" class="control-label"></label>
+                <input type="file" name="files" asp-for="Blogs.Image" class="form-control" />
+
+                @*<label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Blogs.ViewTitle" class="control-label"></label>
+                <input asp-for="Blogs.ViewTitle" class="form-control" />
+                <span asp-validation-for="Blogs.ViewTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tags">Tags</label>
+                <select class="form-control" asp-for="@Model.Blogs.TagsID" asp-items="Model.Tags.ToSelectListItem(Model.Blogs.TagsID)"></select>
+                @*<label asp-for="Blogs.TagsID" class="control-label"></label>
+        <select asp-for="Blogs.TagsID" class="form-control" asp-items="ViewBag.TagsID"></select>
+        <span asp-validation-for="Blogs.TagsID" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

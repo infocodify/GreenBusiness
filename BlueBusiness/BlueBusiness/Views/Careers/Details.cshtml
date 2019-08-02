@@ -1,0 +1,61 @@
+﻿@model BlueBusiness.Models.Jobs
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Job Details</h1>
+
+<div class="row">
+    <div class="col-12 bg-light-breadcrumb h-25 w-100">
+        <p class="lead mb-2 mt-2 font-weight-normal text-right">
+            <a class="text-success" asp-controller="Home" asp-action="Index">Home</a>
+        </p>
+
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center bg-light">
+    <div class="col-md-8 mt-3 mb-3 bg-white shadow-sm p-5">
+        <mark class="badge badge-primary">@Html.DisplayFor(model => model.JobId)</mark>
+        <h2 class="text-success">@Html.DisplayFor(model => model.Title)</h2>
+        <blockquote>@Html.DisplayFor(model => model.JobDate)</blockquote>
+
+        <label>Location:</label><p class="text-success font-weight-bold">@Html.DisplayFor(model => model.Location)</p>
+        <label>Department:</label><p class="text-success font-weight-bold">@Html.DisplayFor(model => model.Department)</p>
+
+        <h2>About Us</h2>
+        <p class="font-weight-normal text-justify">@Html.DisplayFor(model => model.CompanyDescription)</p>
+
+
+        <h4 class="font-weight-normal">Responsibility</h4>
+        <ul>
+            <li>@Html.DisplayFor(model => model.ResponsibilityOne)</li>
+            <li>@Html.DisplayFor(model => model.ResponsibilityTwo)</li>
+            <li>@Html.DisplayFor(model => model.ResponsibilityThree)</li>
+            <li>@Html.DisplayFor(model => model.ResponsibilityFour)</li>
+        </ul>
+
+
+        <h4 class="font-weight-normal">Requirements</h4>
+        <ul>
+            <li>@Html.DisplayFor(model => model.RequirementOne)</li>
+            <li>@Html.DisplayFor(model => model.RequirementTwo)</li>
+            <li>@Html.DisplayFor(model => model.RequirementThree)</li>
+            <li>@Html.DisplayFor(model => model.RequirementFour)</li>
+        </ul>
+
+        <h4 class="font-weight-normal">Benefits</h4>
+        <p>@Html.DisplayFor(model => model.Benefits)</p>
+    </div>
+
+
+    <a asp-controller="Careers" asp-action="JobApply" asp-route-id="@Model.Id">Apply</a> |
+</div>
+
+@using (Html.BeginForm("JobApplication", "Careers", FormMethod.Post))
+{
+
+    <input name="jobTitle" type="text" value="@Html.DisplayFor(model => model.Title)" style="display:none;"/>
+    <input name="jobLocation" type="text" value="@Html.DisplayFor(model => model.Location)" style="display:none;"/>
+    <button type="submit" class="btn btn-success btn-lg">Apply</button>
+}03
