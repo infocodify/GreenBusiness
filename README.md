@@ -1,4 +1,4 @@
-# GreenBusiness Web Application for Business \
+# GreenBusiness Web Application for Business 
 
 
 <p align="center">
