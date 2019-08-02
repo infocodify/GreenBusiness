@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="BlueBusiness/BlueBusiness/wwwroot/images/BlogImage/GreenBusinessPPT.jpg" width="850" alt="accessibility text">
+  <img src="BlueBusiness/BlueBusiness/wwwroot/images/BlogImage/GreenBusinessPPT.jpg" width="950" alt="GreenBusiness Web App">
 </p>
 
 
