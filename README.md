@@ -7,8 +7,9 @@
 
 3.  Clean code, Asynchronous request and communication, highest security and 92/100 Google page speed easily rank on google first page.
 
-3.  Do you need a demo? Send a message an i will provide you the user account credentials to try yourself.
+3.  Do you need a demo? Send a message and i will provide you the user account credentials to try yourself.
 
-Click the following link: https://greenbusiness.azurewebsites.net/
+
+  Click the following link: https://greenbusiness.azurewebsites.net/
 
 
